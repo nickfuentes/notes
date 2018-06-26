@@ -42,7 +42,9 @@ let getNote = (title) => {
 let removeNote = (title) => {
     let notes = fetchNotes();
     let filteredNotes = notes.filter((note) => note.title !== title);
-    saveNotes(filteredNotes);   
+    saveNotes(filteredNotes);
+    
+    return notes.length !== filteredNotes.length;
 };
 
 module.exports = {
